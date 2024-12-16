@@ -1,9 +1,8 @@
-
 /**
  * Interface for fetch response
- * 
+ *
  * @interface IResponse
- * 
+ *
  * |Property|Type|Description|
  * |--------|----|-----------|
  * |status|`number`|Response status code|

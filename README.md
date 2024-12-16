@@ -18,7 +18,8 @@ Run:
 bun orm
 ```
 
-This will ask which orm to setup (drizzle, prisma, supabase). Yes Supabase is not an orm but i just added it to orms to keep it simple.
+This will ask which orm to setup (drizzle, prisma, supabase). Yes Supabase is
+not an orm but i just added it to orms to keep it simple.
 
 ## Using Docker
 
@@ -30,7 +31,9 @@ You can view your images created with `docker images`.
 
 ### In existing projects
 
-To add support for Docker to an existing project, just copy the [`Dockerfile`](https://github.com/sxpersxnic/Next-Boilerplate/tree/main/Dockerfile) into the root of the project and add the following to the `next.config.ts` file:
+To add support for Docker to an existing project, just copy the
+[`Dockerfile`](https://github.com/sxpersxnic/Next-Boilerplate/tree/main/Dockerfile)
+into the root of the project and add the following to the `next.config.ts` file:
 
 ```js
 // next.config.ts

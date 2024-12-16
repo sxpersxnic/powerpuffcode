@@ -2,9 +2,9 @@ import HttpMethod from 'lib/enums/EHttpMethod';
 
 /**
  * Interface for fetch request
- * 
+ *
  * @interface IRequest
- * 
+ *
  * |Property|Type|Description|
  * |--------|----|-----------|
  * |url|`string`|URL to fetch|

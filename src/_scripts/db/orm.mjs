@@ -52,8 +52,8 @@ const orms = {
 
 					export const createClient = () =>
 					createBrowserClient(
-						process.env.NEXT_PUBLIC_SUPABASE_URL!,
-						process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+						process.env.NEXT_PUBLIC_SUPABASE_NEXT_PUBLIC_SUPABASE_URL!,
+						process.env.NEXT_PUBLIC_SUPABASE_NEXT_PUBLIC_SUPABASE_ANON_KEY!,
 					);
 				`,
 			},
@@ -77,8 +77,8 @@ const orms = {
 						});
 
 						const supabase = createServerClient(
-							process.env.NEXT_PUBLIC_SUPABASE_URL!,
-							process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+							process.env.NEXT_PUBLIC_SUPABASE_NEXT_PUBLIC_SUPABASE_URL!,
+							process.env.NEXT_PUBLIC_SUPABASE_NEXT_PUBLIC_SUPABASE_ANON_KEY!,
 							{
 								cookies: {
 									getAll() {
@@ -132,7 +132,7 @@ const orms = {
 					import { drizzle } from 'drizzle-orm/node-postgres';
 					import postgres from 'postgres';
      					
-     					const client = postgres(process.env.DATABASE_URL!, { prepare: false });
+     					const client = postgres(process.env.NEXT_PUBLIC_SUPABASE_POSTGRES_URL!, { prepare: false });
 					export const db = drizzle({ client });
 				`,
 			},
@@ -149,7 +149,7 @@ const orms = {
 						schema: './src/_db/schema.ts',
 						dialect: 'postgresql',
 						dbCredentials: {
-							url: process.env.DATABASE_URL!,
+							url: process.env.NEXT_PUBLIC_SUPABASE_POSTGRES_URL!,
 						},
 					});
 				`,
@@ -219,7 +219,7 @@ const orms = {
 					
 					datasource db {
 						provider = 'postgresql'
-						url = env('DATABASE_URL')
+						url = env('NEXT_PUBLIC_SUPABASE_POSTGRES_URL')
 						}
 						
 						model Example {
@@ -447,7 +447,7 @@ const auth = [
 				}
 
 				if (redirectTo) {
-					return NextResponse.redirect(\`${origin}\${redirectTo}\`);
+					return NextResponse.redirect(\`\${origin}\${redirectTo}\`);
 				}
 
 				// URL to redirect to after sign up process completes
