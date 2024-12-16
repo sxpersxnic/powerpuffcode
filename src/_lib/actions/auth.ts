@@ -130,7 +130,7 @@ export async function signOutAction(): Promise<never> {
 	return redirect('/sign-in');
 }
 
-export async function useSession(): Promise<User> {
+export async function getSession(): Promise<User> {
 	const {
 		data: { user },
 	} = await supabase.auth.getUser();

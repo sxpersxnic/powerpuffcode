@@ -1,8 +1,8 @@
-import { SubmitButton } from 'ui/components/submit-button';
+import { SubmitButton } from 'ui/components/buttons/submit-button';
 import { forgotPasswordAction } from 'lib/actions/auth';
 import { FormMessage } from 'ui/forms/form-message';
-import { Input } from 'ui/components/input';
-import { Label } from 'ui/components/label';
+import Input from 'ui/components/input';
+import Label from 'ui/components/label';
 import Message from 'lib/types/message';
 import Link from 'next/link';
 
