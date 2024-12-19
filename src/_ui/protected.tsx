@@ -1,17 +1,15 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { getSession } from "lib/actions/auth";
-import Element from "lib/types/element";
+import { getSession } from 'lib/actions/auth';
+import Element from 'lib/types/element';
 
 export default async function Protected(): Promise<Element> {
+	const user = await getSession();
 
-  const user = await getSession();
-
-  return (
-    <div>
-      <h1>Welcome {user.email}</h1>
-      <p>
-        Your password: <strong>{user.id}</strong>
-      </p>
-    </div>
-  );
+	return (
+		<div>
+			<h1>Welcome {user.email}</h1>
+			<p>
+				Your password: <strong>{user.id}</strong>
+			</p>
+		</div>
+	);
 }

@@ -4,11 +4,12 @@ import { signUpAction } from 'lib/actions/auth';
 import Label from 'ui/components/label';
 import Input from 'ui/components/input';
 import Message from 'lib/types/message';
+import Element from 'lib/types/element';
 import Link from 'next/link';
 
 export default async function Signup(props: {
 	searchParams: Promise<Message>;
-}) {
+}): Promise<Element> {
 	const searchParams = await props.searchParams;
 	if ('message' in searchParams) {
 		return (

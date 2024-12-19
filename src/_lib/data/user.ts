@@ -1,19 +1,19 @@
-import IRequest from "lib/interfaces/payload/requests";
-import { fetcher } from "lib/utils/fetcher";
-import HttpMethod from "lib/enums/EHttpMethod";
-import IResponse from "../interfaces/payload/responses";
+import IResponse from '../interfaces/payload/responses';
+import IRequest from 'lib/interfaces/payload/requests';
+import HttpMethod from 'lib/enums/EHttpMethod';
+import { fetcher } from 'lib/utils/fetcher';
 
 export async function fetchSession(): Promise<IResponse> {
-  const request: IRequest = {
-    url: "/api/auth/session",
-    method: HttpMethod.GET,
-  };
-  
-  const response = await fetcher(request);
+	const request: IRequest = {
+		url: '/api/auth/session',
+		method: HttpMethod.GET,
+	};
 
-  if (response.status !== 200) {
-    throw new Error("Failed to fetch session");
-  }
+	const response = await fetcher(request);
 
-  return response;
+	if (response.status !== 200) {
+		throw new Error('Failed to fetch session');
+	}
+
+	return response;
 }

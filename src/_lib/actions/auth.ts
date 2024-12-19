@@ -6,9 +6,8 @@ import { User } from '@supabase/supabase-js';
 import { redirect } from 'next/navigation';
 import { headers } from 'next/headers';
 
-const supabase = await createClient();
-
 export async function signUpAction(formData: FormData): Promise<never> {
+	const supabase = await createClient();
 	const email = formData.get('email')?.toString();
 	const password = formData.get('password')?.toString();
 	const origin = (await headers()).get('origin');
@@ -42,6 +41,7 @@ export async function signUpAction(formData: FormData): Promise<never> {
 }
 
 export async function signInAction(formData: FormData): Promise<never> {
+	const supabase = await createClient();
 	const email = formData.get('email') as string;
 	const password = formData.get('password') as string;
 
@@ -58,6 +58,7 @@ export async function signInAction(formData: FormData): Promise<never> {
 }
 
 export async function forgotPasswordAction(formData: FormData): Promise<never> {
+	const supabase = await createClient();
 	const email = formData.get('email')?.toString();
 	const origin = (await headers()).get('origin');
 	const callbackUrl = formData.get('callbackUrl')?.toString();
@@ -91,6 +92,7 @@ export async function forgotPasswordAction(formData: FormData): Promise<never> {
 }
 
 export async function resetPasswordAction(formData: FormData): Promise<void> {
+	const supabase = await createClient();
 	const password = formData.get('password') as string;
 	const confirmPassword = formData.get('confirmPassword') as string;
 
@@ -126,11 +128,13 @@ export async function resetPasswordAction(formData: FormData): Promise<void> {
 }
 
 export async function signOutAction(): Promise<never> {
+	const supabase = await createClient();
 	await supabase.auth.signOut();
 	return redirect('/sign-in');
 }
 
 export async function getSession(): Promise<User> {
+	const supabase = await createClient();
 	const {
 		data: { user },
 	} = await supabase.auth.getUser();

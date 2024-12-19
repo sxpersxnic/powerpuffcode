@@ -4,11 +4,12 @@ import { FormMessage } from 'ui/forms/form-message';
 import Input from 'ui/components/input';
 import Label from 'ui/components/label';
 import Message from 'lib/types/message';
+import Element from 'lib/types/element';
 import Link from 'next/link';
 
 export default async function ForgotPassword(props: {
 	searchParams: Promise<Message>;
-}) {
+}): Promise<Element> {
 	const searchParams = await props.searchParams;
 	return (
 		<>
